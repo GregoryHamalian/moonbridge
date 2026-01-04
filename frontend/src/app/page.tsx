@@ -465,7 +465,7 @@ export default function BridgePage() {
       {/* Footer */}
       <footer className="relative z-10 border-t border-space-700 py-6">
         <div className="max-w-6xl mx-auto px-4 text-center text-sm text-gray-500">
-          <p>MoonBridge by r/CryptoCurrency DAO</p>
+          <p>MoonBridge by CCMOON DAO</p>
         </div>
       </footer>
     </div>
