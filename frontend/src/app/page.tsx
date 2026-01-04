@@ -11,28 +11,7 @@ import {
   calculateFees,
   getDestinationChainId,
 } from '@/config';
-
-// Moon icon component
-function MoonIcon({ className = '' }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 100 100" fill="currentColor">
-      <circle cx="50" cy="50" r="45" />
-      <circle cx="35" cy="35" r="8" fill="rgba(0,0,0,0.2)" />
-      <circle cx="60" cy="25" r="5" fill="rgba(0,0,0,0.15)" />
-      <circle cx="70" cy="55" r="10" fill="rgba(0,0,0,0.2)" />
-      <circle cx="40" cy="65" r="6" fill="rgba(0,0,0,0.15)" />
-    </svg>
-  );
-}
-
-// Arrow icon
-function ArrowIcon({ className = '' }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M5 12h14M12 5l7 7-7 7" />
-    </svg>
-  );
-}
+import Image from 'next/image';
 
 // Chain selector button
 function ChainButton({
@@ -286,7 +265,13 @@ export default function BridgePage() {
       <header className="relative z-10 border-b border-space-700">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <MoonIcon className="w-10 h-10 text-moon-500 moon-float" />
+            <Image 
+              src="/moon-logo.png" 
+              alt="MOON" 
+              width={40} 
+              height={40} 
+              className="moon-float"
+            />
             <div>
               <h1 className="text-2xl font-bold text-white">MoonBridge</h1>
               <p className="text-xs text-gray-500">Arbitrum Nova ↔ One</p>
@@ -310,9 +295,14 @@ export default function BridgePage() {
             
             <button
               onClick={handleSwapChains}
-              className="p-3 bg-space-700 rounded-xl border border-space-600 hover:border-moon-500/50 transition-all"
+              className="p-2 bg-space-700 rounded-xl border border-space-600 hover:border-moon-500/50 transition-all hover:scale-105"
             >
-              <ArrowIcon className="w-5 h-5 text-moon-400" />
+              <Image 
+                src="/swap-arrow.png" 
+                alt="Swap" 
+                width={32} 
+                height={32}
+              />
             </button>
 
             <ChainButton
@@ -349,10 +339,15 @@ export default function BridgePage() {
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 placeholder="0.00"
-                className="input-field pr-20"
+                className="input-field pr-24"
               />
               <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
-                <MoonIcon className="w-5 h-5 text-moon-500" />
+                <Image 
+                  src="/moon-logo.png" 
+                  alt="MOON" 
+                  width={20} 
+                  height={20}
+                />
                 <span className="text-gray-400 font-medium">MOON</span>
               </div>
             </div>
