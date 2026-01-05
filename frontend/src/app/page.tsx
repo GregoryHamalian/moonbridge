@@ -232,6 +232,7 @@ export default function BridgePage() {
 
   // Swap chains
   const handleSwapChains = () => {
+    setAmount(''); // Clear amount to reset button state
     handleSourceChainChange(destChain);
     // Refetch data after chain swap
     setTimeout(() => {
